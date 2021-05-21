@@ -21,7 +21,7 @@ for root, dirs, files in os.walk('./Exam_2014_graph_anns'):
 
 
 
-for root, dirs, files in os.walk('./Exam2014_opinion_ann'):
+for root, dirs, files in os.walk('./Exam_2014_opinion_ann'):
     for file in files:
         if file.endswith('.ann'):
             with open(os.path.join(root, file),'r',encoding='utf-8-sig') as opened:
