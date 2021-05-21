@@ -26,16 +26,16 @@ CSV3_1 %>% select(name, num_of_errors, num_coord, num_poss, num_tu, num_part_nou
 
 CSV3_SYNT
 
-write.csv(CSV3_SYNT,"G:\\Homework\\ЧЕТВЁРТЫЙ КУРС\\Проектная работа\\Inspector__2\\inspector-lab-main\\merged_syntax_selected_graph.csv", row.names = FALSE)
+write.csv(CSV3_SYNT,"merged_syntax_selected_graph.csv", row.names = FALSE)
 
 CSV3_2 %>% select(name, num_of_errors, num_coord, num_poss, num_tu, num_part_noun, num_noun_inf, pos_sim_nei, lemma_sim_nei, pos_sim_all, lemma_sim_all) -> CSV3_SYNT_2
 
 CSV3_SYNT_2
 
-write.csv(CSV3_SYNT_2,"G:\\Homework\\ЧЕТВЁРТЫЙ КУРС\\Проектная работа\\Inspector__2\\inspector-lab-main\\merged_syntax_selected_opinion.csv", row.names = FALSE)
+write.csv(CSV3_SYNT_2,"merged_syntax_selected_opinion.csv", row.names = FALSE)
 
 CSV3_3 %>% select(name, num_of_errors, num_coord, num_poss, num_tu, num_part_noun, num_noun_inf, pos_sim_nei, lemma_sim_nei, pos_sim_all, lemma_sim_all) -> CSV3_SYNT_3
 
 CSV3_SYNT_3
 
-write.csv(CSV3_SYNT_3,"G:\\Homework\\ЧЕТВЁРТЫЙ КУРС\\Проектная работа\\Inspector__2\\inspector-lab-main\\merged_syntax_selected_both_tasks.csv", row.names = FALSE)
+write.csv(CSV3_SYNT_3,"merged_syntax_selected_both_tasks.csv", row.names = FALSE)
