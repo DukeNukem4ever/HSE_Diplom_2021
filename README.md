@@ -1,26 +1,16 @@
 # HSE_Diploma_2021
 
 Файлы для ВКР "Статистические методы исследования коррелятивности признаков автоматизированной оценки сложности текста".
-Содержание папки "correlation":
-1) correlation_code.R - файл, написанный на языке R и позволяющий извлечь коэффициент корреляции Пирсона.
-2) dataset_mine.csv - таблица формата csv, содержащая в себе результат работы программы Inspector на корпусе эссе REALEC 2014 года.
-3) error_counter.py - файл, написанный на языке Python. Подсчитывает количество ошибок в файлах эссе путём поиска синтаксических тегов в файлах ".ann", соответствующим текстам из датасета.
-4) merged_syntax_selected_both_tasks.csv - таблица формата csv, содержащая данные для эссе, написанных для обоих заданий IELTS (описание графика и аргументированное мнение).
-5) merged_syntax_selected_both_tasks_normalized.csv - таблица формата csv, содержащая данные для эссе, написанных для обоих заданий IELTS (описание графика и аргументированное мнение). Количественные данные были подвергнуты нормализации через программу normalize.py.
-6) merged_syntax_selected_graph.csv - таблица формата csv, содержащая данные для эссе, представляющих из себя описание графиков.
-7) merged_syntax_selected_graph_normalized.csv - таблица формата csv, содержащая данные для эссе, представляющих из себя описание графиков. Количественные данные были подвергнуты нормализации через программу normalize.py.
-8) merged_syntax_selected_opinion.csv - таблица формата csv, содержащая данные для аргументированных эссе, в которых выражается мнение относительно определённого высказывания.
-9) merged_syntax_selected_opinion_normalized.csv - таблица формата csv, содержащая данные для аргументированных эссе, в которых выражается мнение относительно определённого высказывания. Количественные данные были подвергнуты нормализации через программу normalize.py.
-10) normalizer.py - файл, написанный на языке Python. Предназначен для нормализации количественных параметров.
-11) numpy_correlation.py - файл, написанный на языке Python. Проводит корреляционный анализ через библиотеку NumPy.
-12) numpy_correlation_both.csv - таблица с результатами корреляционного анализа через файл nunmpy_correlation.py для эссе обоих заданий, предварительно обработанных через normalizer.py.
-13) numpy_correlation_graph.csv - таблица с результатами корреляционного анализа через файл nunmpy_correlation.py для эссе описаний графиков, предварительно обработанных через normalizer.py
-14) numpy_correlation_opinion.csv - таблица с результатами корреляционного анализа через файл nunmpy_correlation.py для аргументированных эссе, предварительно обработанных через normalizer.py.
-15) pandas_correlation.py - файл, написанный на языке Python. Проводит корреляционный анализ через библиотеку Pandas.
-16) pandas_correlation_both.csv - таблица с результатами корреляционного анализа через файл pandas_correlation.py для эссе обоих заданий, предварительно обработанных через normalizer.py.
-17) pandas_correlation_graph.csv - таблица с результатами корреляционного анализа через файл pandas_correlation.py для эссе описаний графиков, предварительно обработанных через normalizer.py
-18) pandas_correlation_opinion.csv - таблица с результатами корреляционного анализа через файл pandas_correlation.py для аргументированных эссе, предварительно обработанных через normalizer.py.
-19) scipy_correlation.py - файл, написанный на языке Python. Проводит корреляционный анализ через библиотеку scipy.
-20) scipy_correlation_both.csv - таблица с результатами корреляционного анализа через файл scipy_correlation.py для эссе обоих заданий, предварительно обработанных через normalizer.py.
-21) scipy_correlation_graph.csv - таблица с результатами корреляционного анализа через файл scipy_correlation.py для эссе описаний графиков, предварительно обработанных через normalizer.py
-22) scipy_correlation_opinion.csv - таблица с результатами корреляционного анализа через файл scipy_correlation.py для аргументированных эссе, предварительно обработанных через normalizer.py.
+
+## Принцип действия
+
+1. Через программу Inspector (https://authors.elsevier.com/a/1d07s3qVb8MJRq) выводится таблица dataset_mine.csv, в которой распределяются параметры сложности.
+2. Программа type_reader.py разбивает таблицу dataset_mine на две части: syntax_dataset_graph.csv и syntax_dataset_opinion.csv в зависимости от задания.
+3. Параллельно с этим программа error_counter.py анализирует файлы эссе на количество ошибок; проверка проходит для обеих групп текстов. На выход получаются файлы error_table_synt_all.csv, error_table_synt_graph.csv и error_table_synt_opinion.csv.
+4. Через open_file_csv.R таблицы dataset_mine, syntax_dataset_graph.csv и syntax_dataset_opinion.csv присоединяют к себе количество ошибок из таблиц error_table_synt_all.csv, error_table_synt_graph.csv и error_table_synt_opinion.csv соответственно. Затем извлекаются значения ключевых признаков (num_coord, num_poss, num_tu, num_part_noun, num_noun_inf, pos_sim_nei, lemma_sim_nei, pos_sim_all и lemma_sim_all) и сохраняются в файлы merged_syntax_selected_graph.csv, merged_syntax_selected_opinion.csv и merged_syntax_selected_both_tasks.csv.
+5. Полученные из пункта 4 датасеты подвергаются нормализации через normalizer.py. На выход подаются файлы merged_syntax_selected_both_tasks_normalized.csv (для эссе из обоих заданий), merged_syntax_selected_graph_normalized.csv (для описаний графиков) и merged_syntax_selected_opinion_normalized.csv (для аргументированных эссе).
+6. На основании нормализованных датасетов проводится корреляционный анализ четырьмя способами. Три из них базируются на коде Python, а одна - на R.
+  1) Корреляция через пакет NumPy для языка Python (numpy_correlation.py); на выход подаёт таблицы numpy_correlation_both.csv (для эссе из обоих заданий), numpy_correlation_graph.csv (для описаний графиков) и numpy_correlation_graph.csv (для аргументированных эссе).
+  2) Корреляция через пакет SciPy для языка Python (scipy_correlation.py); на выход подаёт таблицы scipy_correlation_both.csv (для эссе из обоих заданий), scipy_correlation_graph.csv (для описаний графиков) и scipy_correlation_graph.csv (для аргументированных эссе).
+  3) Корреляция через пакет Pandas для языка Python (pandas_correlation.py); на выход подаёт таблицы pandas_correlation_both.csv (для эссе из обоих заданий), pandas_correlation_graph.csv (для описаний графиков) и pandas_correlation_graph.csv (для аргументированных эссе).
+  4) Корреляция через пакет Psych для языка R (correlation_code.R). На вывод не подаёт ничего; все значения отображаются при последовательном запуске строк кода.
