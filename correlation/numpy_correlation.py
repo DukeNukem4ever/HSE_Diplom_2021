@@ -23,7 +23,7 @@ def numpy_correlation(dataset, filename):
         r_coef = np.corrcoef(dataset['num_of_errors'], dataset[str(bc)])
         correlation_scores.append(round(r_coef[0][1],7))
 
-    print(correlation_scores)
+    # print(correlation_scores)
 
 
     results_numpy['parameter'] = new_names

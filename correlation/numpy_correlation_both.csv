@@ -1,10 +1,10 @@
 parameter,correlation score
-num_coord,0.0766262
-num_poss,0.0240409
-num_tu,0.141195
-num_part_noun,-0.045021
-num_noun_inf,0.0855876
-pos_sim_nei,-0.0460202
-lemma_sim_nei,-0.0498534
-pos_sim_all,-0.0371443
-lemma_sim_all,-0.0434984
+num_coord,0.0779684
+num_poss,0.0247294
+num_tu,0.1421747
+num_part_noun,-0.0460908
+num_noun_inf,0.0877904
+pos_sim_nei,-0.0458602
+lemma_sim_nei,-0.0494092
+pos_sim_all,-0.0367246
+lemma_sim_all,-0.0428908

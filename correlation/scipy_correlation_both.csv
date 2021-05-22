@@ -1,10 +1,10 @@
 parameter,Pearson's coefficient,Pearson's p-value
-num_coord,0.0766,0.0018
-num_poss,0.024,0.3288
-num_tu,0.1412,0.0
-num_part_noun,-0.045,0.0673
-num_noun_inf,0.0856,0.0005
-pos_sim_nei,-0.046,0.0615
-lemma_sim_nei,-0.0499,0.0428
-pos_sim_all,-0.0371,0.1313
-lemma_sim_all,-0.0435,0.0771
+num_coord,0.078,0.0015
+num_poss,0.0247,0.3151
+num_tu,0.1422,0.0
+num_part_noun,-0.0461,0.0611
+num_noun_inf,0.0878,0.0004
+pos_sim_nei,-0.0459,0.0624
+lemma_sim_nei,-0.0494,0.0447
+pos_sim_all,-0.0367,0.1357
+lemma_sim_all,-0.0429,0.0814
