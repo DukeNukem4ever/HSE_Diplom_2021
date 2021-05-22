@@ -14,3 +14,5 @@
 8. Корреляция через пакет SciPy для языка Python (scipy_correlation.py); на выход подаёт таблицы scipy_correlation_both.csv (для эссе из обоих заданий), scipy_correlation_graph.csv (для описаний графиков) и scipy_correlation_graph.csv (для аргументированных эссе).
 9. Корреляция через пакет Pandas для языка Python (pandas_correlation.py); на выход подаёт таблицы pandas_correlation_both.csv (для эссе из обоих заданий), pandas_correlation_graph.csv (для описаний графиков) и pandas_correlation_graph.csv (для аргументированных эссе).
 10. Корреляция через пакет Psych для языка R (correlation_code.R). На вывод не подаёт ничего; все значения отображаются при последовательном запуске строк кода.
+
+Все необходимые файлы лежат в папке correlation.
